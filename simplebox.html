@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>foobar</title>
+		<style>
+		.ch{
+			border-style: solid;
+    		border-color: #ff0000 #0000ff;
+			background-color:#bad455
+		}
+		</style>
+		
+	</head>
+	<body>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<div class="ch"><img src="a.png" width="100px" height="100px"/></div>
+		<br/>
+		<div class="tmp" id='tmp' style="top:200px">Temp</div>
+<script>
+		let a=document.querySelector('.tmp');
+		let b=document.querySelector('.ch');
+		a.style.position="absolute";
+		b.style.position="absolute";
+		b.style.display='none';
+		a.style.left=130+'px';
+		
+		a.addEventListener('mouseover',mouseOver);
+		a.addEventListener('mouseout',mouseOut);
+		function mouseOver(){
+			b.style.display='inline-block';
+			b.style.left=a.offsetLeft+'px';
+			let top1=a.style.top;
+			//console.log(top1);
+			b.style.top=top1+'px';
+		}
+		function mouseOut(){
+			b.style.display='none';		
+		}
+		</script>
+	</body>
+</html>
